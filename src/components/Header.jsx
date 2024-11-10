@@ -49,10 +49,12 @@ const Header = () => {
                         'aria-labelledby': 'basic-button',
                     }}
                 >
-                    <div className='cart_details d-flex justify-content-center align-items-center' style={{width:'24rem',padding:10,position:'relative'}}>
-                      <i className='fas fa-close smallClose' style={{position:'absolute',top:2,right:20,fontSize:23, cursor:'pointer' }}></i>
+                    <div className='cart_details d-flex justify-content-center align-items-center ' style={{width:'18rem',padding:6,position:'relative'}}>
+                      <i className='fas fa-close smallClose'
+                      onClick={handleClose}
+                      style={{position:'absolute',top:0,right:5,fontSize:20, cursor:'pointer' }}></i>
                         <p style={{fontSize:22}}>your cart is empty</p>
-                       <img src={Cart} alt="" />
+                       <img src={Cart} alt="" className='emptyCar_img'  style={{width:'5rem',padding:10}}/>
                     </div>
                 </Menu>
             </Navbar>
