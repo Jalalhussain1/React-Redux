@@ -7,8 +7,14 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 import Cart from '../assets/cart.gif'
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+    
+    const getdata =useSelector((state) => state.cartreduser.carts);
+    console.log(getdata);
+
+
     const [anchorEl, setAnchorEl] = useState  (null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -29,7 +35,7 @@ const Header = () => {
                             Home
                         </NavLink>
                     </Nav>
-                    <Badge badgeContent={4} color="primary"
+                    <Badge badgeContent={getdata.length} color="primary"
                         id="basic-button"
                         aria-controls={open ? 'basic-menu' : undefined}
                         aria-haspopup="true"
